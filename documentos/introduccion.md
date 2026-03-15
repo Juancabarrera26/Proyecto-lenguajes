@@ -1,18 +1,15 @@
-# Objetivos del proyecto
+# Introduccion
 
-## Objetivo general
+En el campo de las ciencias de la computacion, los lenguajes de programacion juegan un papel fundamental en el desarrollo de software y en la solucion de problemas dentro de diferentes areas del conocimiento. Existen lenguajes de proposito general que permiten desarrollar aplicaciones para multiples dominios, pero tambien existen lenguajes disenados para resolver problemas dentro de un contexto especifico. Estos lenguajes se conocen como lenguajes de dominio especifico o DSL (Domain Specific Language).
 
-Diseñar un lenguaje de dominio especifico orientado a procesos de Deep Learning que permita ejecutar operaciones matematicas, manipulacion de matrices y operaciones basicas relacionadas con analisis de datos y aprendizaje automatico.
+Un lenguaje de dominio especifico es un lenguaje de programacion disenado para facilitar la expresion de soluciones dentro de un dominio particular. A diferencia de los lenguajes de proposito general, los DSL buscan simplificar la sintaxis y ofrecer instrucciones que representen directamente las operaciones mas comunes dentro de un area especifica.
 
-## Objetivos especificos
+En este proyecto se propone el diseno de un lenguaje de dominio especifico llamado **JCDS**. Este lenguaje esta orientado a la realizacion de operaciones matematicas, manipulacion de matrices y ejecucion de procesos basicos relacionados con analisis de datos y aprendizaje automatico.
 
-- Diseñar la estructura general del lenguaje JCDS.
-- Definir la sintaxis del lenguaje para representar operaciones matematicas, matrices y procesos de analisis de datos.
-- Definir la gramatica del lenguaje utilizando ANTLR4.
-- Implementar el analisis lexico y sintactico del lenguaje mediante ANTLR.
-- Utilizar el patron de diseno Visitor para ejecutar las instrucciones definidas en el lenguaje.
-- Integrar el lenguaje con Python para ejecutar las operaciones del DSL.
-- Permitir la ejecucion de operaciones aritmeticas y operaciones con matrices.
-- Incluir estructuras de control como condicionales y ciclos.
-- Permitir lectura y escritura de archivos de datos.
-- Incluir funciones basicas relacionadas con aprendizaje automatico como regresion y clasificacion.
+El lenguaje JCDS busca ofrecer una sintaxis clara y sencilla que permita representar operaciones comunes utilizadas en procesos de aprendizaje automatico, como operaciones aritmeticas, manipulacion de matrices, lectura de datos, generacion de graficas y ejecucion de algoritmos de regresion y clasificacion.
+
+El desarrollo del lenguaje se realizara utilizando **ANTLR4** como herramienta para la generacion del analizador lexico y sintactico. A partir de la gramatica definida, ANTLR permitira generar automaticamente el lexer y el parser del lenguaje. Posteriormente, el patron de diseno **Visitor** sera utilizado para recorrer el arbol sintactico generado y ejecutar las operaciones del lenguaje mediante **Python**.
+
+Este proyecto se desarrolla como parte del curso de Lenguajes de Programacion y tiene como objetivo aplicar los conceptos fundamentales relacionados con diseno de lenguajes, analisis lexico, analisis sintactico y ejecucion de instrucciones mediante un interprete.
+
+En el primer corte del proyecto se presenta el diseno conceptual del lenguaje JCDS, incluyendo la definicion del lenguaje, la arquitectura general del sistema, la sintaxis inicial del lenguaje, las operaciones basicas que soportara y la estructura general del proyecto.

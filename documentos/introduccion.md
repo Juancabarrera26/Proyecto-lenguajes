@@ -2,11 +2,11 @@
 
 ## Objetivo general
 
-Disenar un lenguaje de dominio especifico orientado a procesos de Deep Learning que permita ejecutar operaciones matematicas, manipulacion de matrices y operaciones basicas relacionadas con analisis de datos y aprendizaje automatico.
+Diseñar un lenguaje de dominio especifico orientado a procesos de Deep Learning que permita ejecutar operaciones matematicas, manipulacion de matrices y operaciones basicas relacionadas con analisis de datos y aprendizaje automatico.
 
 ## Objetivos especificos
 
-- Disenar la estructura general del lenguaje JCDS.
+- Diseñar la estructura general del lenguaje JCDS.
 - Definir la sintaxis del lenguaje para representar operaciones matematicas, matrices y procesos de analisis de datos.
 - Definir la gramatica del lenguaje utilizando ANTLR4.
 - Implementar el analisis lexico y sintactico del lenguaje mediante ANTLR.

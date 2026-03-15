@@ -150,7 +150,7 @@ predict(model, new_data)
 # Estructura del proyecto
 
 El proyecto esta organizado en la siguiente estructura de carpetas.
-
+```
 JCDS
 ├── documentos
 │ ├── introduccion.md
@@ -174,7 +174,7 @@ JCDS
 │ └── visitor.py
 │
 └── requisitos.txt
-
+```
 
 ## documentos
 

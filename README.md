@@ -1,8 +1,18 @@
 # JCDS
 
-JCDS (Juan Camilo, Danilo, Sebastian) es un lenguaje de dominio especifico (DSL) disenado para facilitar la definicion y ejecucion de operaciones matematicas, manipulacion de matrices y procesos relacionados con Deep Learning.
+JCDS abreviado en (Juan Camilo, Danilo, sebastian) es un lenguaje de dominio especifico (DSL) disenado para facilitar la definicion y ejecucion de operaciones matematicas, manipulacion de matrices y procesos basicos relacionados con analisis de datos, aprendizaje automatico y Deep Learning.
 
-Este proyecto hace parte del curso de Lenguajes de Programacion y tiene como objetivo disenar e implementar un lenguaje propio utilizando ANTLR4 y Python.
+Este proyecto se desarrolla como parte del curso de Lenguajes de Programacion y tiene como objetivo disenar e implementar un lenguaje propio utilizando ANTLR4 y Python.
+
+---
+
+# Descripcion del proyecto
+
+Un lenguaje de dominio especifico es un lenguaje de programacion disenado para resolver problemas dentro de un dominio particular. A diferencia de los lenguajes de proposito general, un DSL esta orientado a simplificar tareas especificas dentro de un area determinada.
+
+El lenguaje JCDS esta orientado a procesos de analisis de datos y aprendizaje automatico. Su objetivo es permitir que el usuario pueda escribir instrucciones simples para realizar operaciones matematicas, manipulacion de matrices, procesamiento de datos y ejecucion de algoritmos de aprendizaje automatico.
+
+El lenguaje sera implementado utilizando ANTLR4 para el analisis lexico y sintactico. A partir de la gramatica definida, ANTLR permitira generar automaticamente el lexer y el parser del lenguaje. Posteriormente, el patron de diseno Visitor sera utilizado para recorrer el arbol sintactico generado y ejecutar las operaciones del lenguaje mediante Python.
 
 ---
 
@@ -10,140 +20,79 @@ Este proyecto hace parte del curso de Lenguajes de Programacion y tiene como obj
 
 ## Objetivo general
 
-Disenar e implementar un lenguaje de dominio especifico capaz de ejecutar operaciones matematicas, manipulacion de matrices y operaciones relacionadas con analisis de datos y procesos basicos de aprendizaje automatico.
+Disenar un lenguaje de dominio especifico orientado a procesos de Deep Learning que permita ejecutar operaciones matematicas, manipulacion de matrices y operaciones basicas relacionadas con analisis de datos y aprendizaje automatico.
 
 ## Objetivos especificos
 
-- Disenar la sintaxis del lenguaje JCDS.
-- Implementar un analizador lexico y sintactico utilizando ANTLR4.
-- Desarrollar un interprete del lenguaje utilizando Python.
-- Permitir operaciones matematicas y matriciales.
-- Permitir operaciones de procesamiento de datos.
-- Integrar algoritmos basicos de aprendizaje automatico.
-- Implementar el patron de diseno Visitor para la ejecucion del lenguaje.
+- Disenar la estructura general del lenguaje JCDS.
+- Definir la sintaxis del lenguaje para representar operaciones matematicas, matrices y procesamiento de datos.
+- Definir la gramatica del lenguaje utilizando ANTLR4.
+- Implementar el analisis lexico y sintactico del lenguaje.
+- Utilizar el patron de diseno Visitor para ejecutar las instrucciones del lenguaje.
+- Integrar el lenguaje con Python para ejecutar las operaciones del DSL.
+
+Los detalles completos del diseno del lenguaje se encuentran en la carpeta `documentos`.
 
 ---
 
-# Descripcion del lenguaje
+# Alcance del primer corte
 
-Un lenguaje de dominio especifico es un lenguaje disenado para resolver un problema particular dentro de un dominio especifico.
+En el primer corte del proyecto se presenta el diseno conceptual del lenguaje JCDS. Esta etapa se enfoca en definir la estructura del lenguaje y los componentes necesarios para su implementacion.
 
-El lenguaje JCDS esta orientado a facilitar tareas relacionadas con analisis de datos, operaciones matematicas, manipulacion de matrices y procesos de aprendizaje automatico mediante una sintaxis sencilla y clara.
-
-El lenguaje toma inspiracion en diferentes lenguajes de programacion como:
-
-- Python
-- C
-- Java
-- Haskell
-
-y busca combinar simplicidad con capacidad para realizar operaciones avanzadas relacionadas con Deep Learning.
-
----
-
-# Primer corte
-
-En el primer corte del proyecto se presenta el diseno del lenguaje JCDS incluyendo:
+En esta fase se incluyen:
 
 - definicion del lenguaje
-- objetivos del proyecto
-- arquitectura del sistema
+- arquitectura general del sistema
 - sintaxis inicial del lenguaje
-- definicion de operaciones basicas
+- operaciones basicas soportadas
 - estructura del proyecto
 - organizacion del repositorio
 
-En esta etapa se desarrolla el diseno conceptual del lenguaje antes de implementar completamente su interprete.
+La documentacion detallada de estos elementos se encuentra dentro de la carpeta `documentos`.
 
 ---
 
-# Operaciones soportadas
+# Arquitectura general
 
-El lenguaje JCDS permitira realizar diferentes tipos de operaciones.
+El funcionamiento del lenguaje JCDS sigue el siguiente flujo:
 
-## Operaciones aritmeticas
+Programa escrito en JCDS  
+↓  
+Lexer generado con ANTLR  
+↓  
+Parser generado con ANTLR  
+↓  
+Parse Tree  
+↓  
+Visitor Pattern  
+↓  
+Ejecucion en Python  
+↓  
+Resultados
 
-El lenguaje permitira realizar operaciones matematicas como:
+El patron Visitor sera utilizado para recorrer el arbol sintactico generado por ANTLR y ejecutar las instrucciones definidas en el lenguaje.
 
-- suma
-- resta
-- multiplicacion
-- division
-- modulo
-- potencias
-- funciones trigonometricas
+Una explicacion mas detallada de esta arquitectura se encuentra en `documentos/arquitectura_del_lenguaje.md`.
 
-Ejemplo de sintaxis posible:
-```
-a = 5 + 3
-b = a * 2
-c = sin(45)
-```
+---
 
+# Operaciones del lenguaje
 
-## Operaciones con matrices
+El lenguaje JCDS esta disenado para soportar diferentes tipos de operaciones relacionadas con matematicas, matrices y procesamiento de datos.
 
-- suma de matrices
-- resta de matrices
-- multiplicacion de matrices
-- matriz inversa
-- matriz transpuesta
+Entre las principales capacidades del lenguaje se incluyen:
 
-Ejemplo conceptual:
-```
-matrix A = [[1,2],[3,4]]
-matrix B = [[5,6],[7,8]]
-
-C = A + B
-D = transpose(A)
-```
-
-
-## Control de flujo
-
-El lenguaje soportara estructuras de control basicas.
-
-- condicionales
-- ciclos for
-- ciclos while
-
-Ejemplo conceptual:
-```
-if a > b {
-print(a)
-}
-
-for i in range(0,10) {
-print(i)
-}
-```
-
-## Manejo de archivos
-
-El lenguaje permitira leer y escribir archivos de texto.
-
-Ejemplo conceptual:
-```
-data = read("datos.txt")
-write("salida.txt", data)
-```
-
-
-## Procesamiento de datos
-
-El lenguaje incluira funciones basicas relacionadas con aprendizaje automatico.
-
-- regresion lineal
-- regresion logistica
-- clasificacion usando perceptron multicapa
+- operaciones aritmeticas
+- manipulacion de matrices
+- estructuras de control
+- manejo de archivos
+- generacion de graficas
+- modelos de regresion
+- clasificacion utilizando perceptron multicapa
 - algoritmos de agrupamiento
-- prediccion usando redes neuronales
+- prediccion de datos
 
-Ejemplo conceptual:
-```
-model = linear_regression(data)
-predict(model, new_data)
-```
+La sintaxis completa del lenguaje y ejemplos detallados se encuentran en:
 
 ---
 

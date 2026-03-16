@@ -323,7 +323,7 @@ Este ejemplo muestra como JCDS combina operaciones matematicas, matrices, estruc
 
 ---
 
-# Consideraciones para la implementacion
+# Analisis la implementacion
 
 La sintaxis propuesta en este documento representa una version inicial del lenguaje JCDS. Durante las siguientes etapas del proyecto, esta sintaxis sera refinada y formalizada mediante una gramatica definida en ANTLR4.
 
@@ -331,6 +331,3 @@ La implementacion del lenguaje se realizara utilizando Python y el patron Visito
 
 ---
 
-# Conclusion
-
-La sintaxis de JCDS fue disenada para ofrecer una forma clara y estructurada de representar operaciones relacionadas con matematicas, matrices, procesamiento de datos y aprendizaje automatico. Esta propuesta constituye la base para la construccion formal del lenguaje y su posterior implementacion dentro del proyecto.

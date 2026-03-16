@@ -139,3 +139,198 @@ Operaciones con matrices:
 - inversa
 
 Ejemplos:
+```
+matrix A = [[1,2],[3,4]]
+matrix B = [[5,6],[7,8]]
+
+C = A + B
+D = A - B
+E = A * B
+F = transpose(A)
+G = inverse(A)
+```
+
+---
+
+# Impresion de resultados
+
+El lenguaje incluira una funcion para mostrar resultados en consola.
+
+Ejemplo:
+```
+print(a)
+print(C)
+```
+
+---
+
+# Condicionales
+
+JCDS soportara estructuras condicionales para tomar decisiones.
+
+Sintaxis propuesta:
+```
+if a > b {
+print(a)
+}
+```
+
+Tambien se considera soporte para else.
+
+Ejemplo:
+```
+if a > b {
+print(a)
+} else {
+print(b)
+}
+```
+
+---
+
+# Ciclo for
+
+JCDS soportara ciclos for para iteraciones definidas.
+
+Sintaxis propuesta:
+```
+for i in range(0,10) {
+print(i)
+}
+```
+
+---
+
+# Ciclo while
+
+JCDS soportara ciclos while para iteraciones condicionadas.
+
+Sintaxis propuesta:
+```
+while a < 10 {
+a = a + 1
+}
+```
+
+---
+
+# Lectura y escritura de archivos
+
+El lenguaje permitira operaciones basicas de manejo de archivos de texto.
+
+Lectura de archivos:
+```
+data = read("datos.txt")
+```
+
+Escritura de archivos:
+```
+write("salida.txt", data)
+```
+
+Estas funciones permitiran integrar archivos externos al flujo de ejecucion del lenguaje.
+
+---
+
+# Graficas de datos
+
+JCDS incluira funciones para representar informacion graficamente.
+
+Sintaxis propuesta:
+
+```
+plot(data)
+plot(predictions)
+```
+
+Estas instrucciones permitiran generar graficas utilizando librerias de Python en la implementacion interna del lenguaje.
+
+---
+
+# Regresion lineal y logistica
+
+El lenguaje incluira funciones relacionadas con modelos de regresion.
+
+Ejemplo:
+```
+model = linear_regression(data)
+result = predict(model, new_data)
+```
+
+Ejemplo de regresion logistica:
+```
+model = logistic_regression(data)
+result = predict(model, new_data)
+```
+
+---
+
+# Clasificacion con perceptron multicapa
+
+JCDS permitira definir modelos de clasificacion utilizando perceptron multicapa.
+
+Ejemplo:
+```
+model = mlp_classifier(data)
+result = predict(model, test_data)
+```
+
+---
+
+# Agrupamiento y prediccion
+
+El lenguaje tambien podra incluir funciones para agrupamiento y prediccion.
+
+Ejemplo de agrupamiento:
+```
+groups = clustering(data)
+```
+
+Ejemplo de prediccion:
+```
+prediction = predict(model, input_data)
+```
+
+---
+
+# Ejemplo de programa en JCDS
+
+A continuacion se presenta un ejemplo conceptual de un programa escrito en JCDS.
+```
+matrix A = [[1,2],[3,4]]
+matrix B = [[5,6],[7,8]]
+
+C = A + B
+print(C)
+
+a = 10
+b = 5
+
+if a > b {
+print(a)
+}
+
+data = read("datos.txt")
+plot(data)
+
+model = linear_regression(data)
+result = predict(model, data)
+
+print(result)
+```
+
+Este ejemplo muestra como JCDS combina operaciones matematicas, matrices, estructuras de control, manejo de archivos, graficas y funciones basicas de aprendizaje.
+
+---
+
+# Consideraciones para la implementacion
+
+La sintaxis propuesta en este documento representa una version inicial del lenguaje JCDS. Durante las siguientes etapas del proyecto, esta sintaxis sera refinada y formalizada mediante una gramatica definida en ANTLR4.
+
+La implementacion del lenguaje se realizara utilizando Python y el patron Visitor, lo cual permitira recorrer el arbol sintactico generado y ejecutar cada una de las instrucciones definidas en el lenguaje.
+
+---
+
+# Conclusion
+
+La sintaxis de JCDS fue disenada para ofrecer una forma clara y estructurada de representar operaciones relacionadas con matematicas, matrices, procesamiento de datos y aprendizaje automatico. Esta propuesta constituye la base para la construccion formal del lenguaje y su posterior implementacion dentro del proyecto.

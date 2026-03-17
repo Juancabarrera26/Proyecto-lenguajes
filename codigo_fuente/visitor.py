@@ -1,56 +1,71 @@
-import sys
-sys.path.append("../gramatica")
-
 from JCDSVisitor import JCDSVisitor
 
 
 class EvalVisitor(JCDSVisitor):
-
     def __init__(self):
-        self.memory = {}
+        self.variables = {}
 
     def visitProgram(self, ctx):
-        for stmt in ctx.statement():
-            self.visit(stmt)
+        for s in ctx.statement():
+            self.visit(s)
 
     def visitAssignment(self, ctx):
-        name = ctx.ID().getText()
-        value = self.visit(ctx.expression())
-
-        self.memory[name] = value
-
-        print(name, "=", value)
-
-        return value
+        nombre = ctx.ID().getText()
+        valor = self.visit(ctx.expression())
+        self.variables[nombre] = valor
+        print(nombre, "=", valor)
+        return valor
 
     def visitExpression(self, ctx):
 
-        if ctx.getChildCount() == 3:
-
-            left = self.visit(ctx.getChild(0))
-            op = ctx.getChild(1).getText()
-            right = self.visit(ctx.getChild(2))
-
-            if op == '+':
-                return left + right
-
-            if op == '-':
-                return left - right
-
-            if op == '*':
-                return left * right
-
-            if op == '/':
-                return left / right
-
-            if op == '^':
-                return left ** right
-
+        # numero
         if ctx.NUMBER():
             return int(ctx.NUMBER().getText())
 
-        if ctx.ID():
-            name = ctx.ID().getText()
-            return self.memory.get(name, 0)
+        # variable
+        if ctx.ID() and ctx.getChildCount() == 1:
+            nombre = ctx.ID().getText()
+            if nombre not in self.variables:
+                raise Exception("Variable no definida: " + nombre)
+            return self.variables[nombre]
 
-        return self.visitChildren(ctx)
+        # sqrt(...)
+        if ctx.getChildCount() == 4 and ctx.getChild(0).getText() == "sqrt":
+            valor = self.visit(ctx.getChild(2))
+            return self.sqrt(valor)
+
+        # parentesis
+        if ctx.getChildCount() == 3 and ctx.getChild(0).getText() == "(":
+            return self.visit(ctx.getChild(1))
+
+        # operaciones
+        if ctx.getChildCount() == 3:
+            izq = self.visit(ctx.getChild(0))
+            op = ctx.getChild(1).getText()
+            der = self.visit(ctx.getChild(2))
+
+            if op == "+":
+                return izq + der
+            if op == "-":
+                return izq - der
+            if op == "*":
+                return izq * der
+            if op == "/":
+                if der == 0:
+                    raise Exception("Division por cero")
+                return izq / der
+            if op == "^":
+                return izq ** der
+
+    def sqrt(self, n):
+        if n < 0:
+            raise Exception("No se puede sacar raiz cuadrada de un numero negativo")
+
+        if n == 0:
+            return 0
+
+        x = n
+        for _ in range(20):
+            x = 0.5 * (x + n / x)
+
+        return x

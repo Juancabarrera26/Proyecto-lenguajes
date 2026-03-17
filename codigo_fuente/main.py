@@ -1,30 +1,16 @@
-import sys
-sys.path.append("../gramatica")
-
-from antlr4 import *
+from antlr4 import FileStream, CommonTokenStream
 from JCDSLexer import JCDSLexer
 from JCDSParser import JCDSParser
 from visitor import EvalVisitor
 
 
-def run_file(filename):
+archivo = input("Ingrese el nombre del archivo .jcds: ")
 
-    input_stream = FileStream(filename)
+entrada = FileStream(archivo, encoding="utf-8")
+lexer = JCDSLexer(entrada)
+tokens = CommonTokenStream(lexer)
+parser = JCDSParser(tokens)
+arbol = parser.program()
 
-    lexer = JCDSLexer(input_stream)
-    stream = CommonTokenStream(lexer)
-
-    parser = JCDSParser(stream)
-    tree = parser.program()
-
-    visitor = EvalVisitor()
-    visitor.visit(tree)
-
-
-if __name__ == "__main__":
-
-    if len(sys.argv) < 2:
-        print("Uso: python3 main.py archivo.jcds")
-        sys.exit(1)
-
-    run_file(sys.argv[1])
+visitor = EvalVisitor()
+visitor.visit(arbol)

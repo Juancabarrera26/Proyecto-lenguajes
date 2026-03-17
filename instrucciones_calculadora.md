@@ -32,3 +32,54 @@ cp JCDSVisitor.py ../codigo_fuente/
 ```bash
 cd ../codigo_fuente
 ```
+## 6. Ejecutar la calculadora
+
+```bash
+python3 main.py
+```
+## 7. Probar operaciones
+
+# Una vez iniciada la calculadora, se pueden escribir expresiones como las siguientes:
+
+```bash
+5 + 3
+sqrt(25)
+a = 10
+a * 2
+(2 + 3) * 4
+a ^ 2
+```
+
+## 8. Salir del programa
+
+```
+salida
+```
+
+## Ejemplo de uso
+
+```
+JCDS - Modo interactivo
+Escribe 'salir' para terminar
+
+>>> 5 + 3
+8
+
+>>> sqrt(25)
+5.0
+
+>>> a = 10
+a = 10
+
+>>> a * 2
+20
+
+>>> (2 + 3) * 4
+20
+
+>>> a ^ 2
+100
+
+>>> salir
+```
+

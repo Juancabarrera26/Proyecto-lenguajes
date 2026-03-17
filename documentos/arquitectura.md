@@ -116,20 +116,6 @@ Este patron permite separar claramente la estructura del lenguaje de la logica d
 
 ---
 
-# Ejecucion en Python
-
-La ejecucion de las operaciones del lenguaje se realiza utilizando Python. Python se encarga de realizar los calculos, manipulacion de matrices, generacion de graficas y ejecucion de algoritmos de aprendizaje automatico.
-
-Para esto se utilizaran diferentes librerias especializadas, entre ellas:
-
-- NumPy para operaciones con matrices
-- Matplotlib para generacion de graficas
-- Scikit-learn para algoritmos de regresion y clasificacion
-
-Python recibe las instrucciones interpretadas por el Visitor y ejecuta las operaciones correspondientes.
-
----
-
 # Componentes del sistema
 
 La arquitectura del proyecto se organiza en diferentes componentes dentro del repositorio.

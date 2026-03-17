@@ -14,7 +14,8 @@ assignment
     ;
 
 expression
-    : expression '^' expression
+    : 'sqrt' '(' expression ')'
+    | expression '^' expression
     | expression '*' expression
     | expression '/' expression
     | expression '+' expression

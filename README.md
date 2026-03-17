@@ -153,7 +153,5 @@ El desarrollo del lenguaje JCDS utiliza las siguientes tecnologias:
 
 - ANTLR4
 - Python
-- NumPy
-- Matplotlib
 - Scikit-learn
 - Linux (Ubuntu)
